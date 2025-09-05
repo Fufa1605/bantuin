@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Foto Multifungsi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-dot-outline"></div>
+
+    <div class="tab-menu">
+        <button class="tab-button active" data-tab="kompresi">Kompres Foto</button>
+        <button class="tab-button" data-tab="jernihkan">Jernihkan Foto</button>
+    </div>
+
+    <main class="content">
+        <div id="kompresi" class="tab-content active">
+            <div class="container">
+              <img src="logo.webp" alt="Logo Prosesin" class="main-logo">
+                <h1>Kompres Foto ke WebP</h1>
+                <p>Pilih foto (PNG, JPG, JPEG) untuk dikompres menjadi WebP dan diunduh dalam file ZIP.</p>
+                <input type="file" id="fileInput" multiple accept=".png, .jpg, .jpeg">
+                <button id="compressBtn" disabled>Mulai Kompres & ZIP</button>
+                <div id="status"></div>
+            </div>
+        </div>
+
+        <div id="jernihkan" class="tab-content">
+            <div class="container">
+                <h1>Jernihkan Foto (Upscale AI)</h1>
+                <p>Gunakan AI untuk meningkatkan kualitas foto yang pecah atau buram.</p>
+                <input type="file" id="upscaleFileInput" accept=".png, .jpg, .jpeg">
+                <button id="upscaleBtn" disabled>Mulai Jernihkan</button>
+                <div id="upscaleStatus"></div>
+                <div id="preview-image"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/pako/dist/pako_deflate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver/dist/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.7.1/dist/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
